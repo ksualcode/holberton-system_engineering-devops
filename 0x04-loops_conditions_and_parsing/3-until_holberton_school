@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+#Printing holberton school with until
+
+i=1
+
+until [ $i -gt 10 ]; do
+    echo "Holberton School"
+    let i+=1
+done
