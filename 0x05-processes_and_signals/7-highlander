@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# Printing To infinity and beyond indefinitely and it's invincible
+i=0
+while [ $i ]
+do
+    trap 'echo I am invincible!!!' SIGTERM
+    echo "To infinity and beyond"
+    sleep 2
+done
