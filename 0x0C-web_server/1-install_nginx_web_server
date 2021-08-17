@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# Installing nginx
+
+apt-get -y install nginx
+echo "Holberton School" > /usr/share/nginx/html/index.html
