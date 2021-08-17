@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 # Installing nginx
 
-apt-get -y install nginx
-echo "Holberton School" > /usr/share/nginx/html/index.html
+apt-get update -y
+apt-get install nginx -y
+echo "Holberton School" > /var/www/html/index.html
+service nginx restart
