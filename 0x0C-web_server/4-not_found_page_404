@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# Installing nginx and adding 404
+
+sudo apt-get update -y
+sudo apt-get install -y nginx
+echo 'Holberton School' > /var/www/html/index.html
+sed -i "/server_name _/a \        rewrite ^/redirect_me/ https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;\n" /etc/nginx/sites-available/default
+sed -i "/location/a \                error_page 404 /code_404.html;\n" /etc/nginx/sites-available/default
+echo "Ceci n'est pas une page" > /var/www/html/code_404.html
+sudo service nginx restart
