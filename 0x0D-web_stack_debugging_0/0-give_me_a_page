@@ -1,4 +1,3 @@
 #!/usr/bin/env bash
 # Script that, if it works, will prevent my inminent suicide
-
-service apache2 start
+a
