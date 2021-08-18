@@ -1,5 +1,11 @@
+<<<<<<< HEAD
 #!/usr/bin/env bash
 # Script that, if it works, will prevent my inminent suicide
 
 echo "ServerName localhost" >> /etc/apache2/apache2.conf
 service apache2 restart
+=======
+#!/usr/bin/env bash
+# Script that, if it works, will prevent my inminent suicide
+service apache2 start
+>>>>>>> c5c9c7396605fd413cf338c33e344ff9a1efc8de
