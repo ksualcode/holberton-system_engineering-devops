@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
 # Script that, if it works, will prevent my inminent suicide
 
-echo "ServerName localhost" >> /etc/apache2/apache2.conf
-service apache2 restart
+service apache2 start
