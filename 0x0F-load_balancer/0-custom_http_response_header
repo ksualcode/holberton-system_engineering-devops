@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# Sets a server
+sudo apt-get -y update
+sudo apt-get -y install nginx
+sudo ufw allow 'Nginx HTTP'
+sudo sed -i "/server_name _/a add_header X-Served-By ${HOSTNAME} always;\n" /etc/nginx/sites-available/default
+sudo service nginx restart
