@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+# Installs and configures HAproxy
+sudo add-apt-repository ppa:vbernat/haproxy-1.8 -y
+sudo apt-get update
+sudo apt-get install haproxy -y
+printf %s "
+    frontend http
+        bind *:80
+        mode http
+        default_backend nodes
+
+    backend nodes
+        mode http
+        balance roundrobin
+        option forwardfor
+        http-request set-header X-Forwarded-Port %[dst_port]
+        http-request add-header X-Forwarded-Proto https if { ssl_fc }
+        server 2770-web-01 35.227.18.212:80 check
+        server 2770-web-02 35.185.5.35:80 check
+" >> /etc/haproxy/haproxy.cfg
+
+service haproxy restart
