@@ -6,5 +6,5 @@ echo 'Holberton School' > /var/www/html/index.html
 sed -i "/server_name _/a \        rewrite ^/redirect_me/ https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;\n" /etc/nginx/sites-available/default
 sed -i "/location/a \                error_page 404 /code_404.html;\n" /etc/nginx/sites-available/default
 echo "Ceci n'est pas une page" > /var/www/html/code_404.html
-sudo sed -i "/server_name _/a add_header X-Served-By ${HOSTNAME} always;\n" /etc/nginx/sites-available/default
+sudo sed -i "/location /a \                add_header X-Served-By $HOSTNAME;\n" /etc/nginx/sites-available/default
 sudo service nginx restart
