@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
 # Fixing so it listends to port 80 instead of port 8080 but compressed
 cat /etc/nginx/sites-available/default > /etc/nginx/sites-enabled/default
-pkill nginx
-service nginx restart
+pkill -1 nginx
