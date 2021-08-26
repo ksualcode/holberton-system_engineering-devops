@@ -1,3 +1,6 @@
 #!/usr/bin/env bash
-# Debugging script for port
-
+# Fixing so it listends to port 80 instead of port 8080
+sed -i 's/listen 8080 default_server;/listen 80 default_server;/' /etc/nginx/sites-enabled/default
+sed -i 's/listen [::]:8080 default_server ipv6only=on;/listen [::]:80 default_server ipv6only=on;/' /etc/nginx/sites-enabled/default
+pkill nginx
+service nginx restart
