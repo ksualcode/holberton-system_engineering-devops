@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# printing the user passed by with whoami
+
+sudo -H -u "$1" bash -c 'whoami'
+
