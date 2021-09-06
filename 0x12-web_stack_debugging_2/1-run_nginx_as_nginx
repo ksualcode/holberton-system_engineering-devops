@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# Making Nginx use the nginx user
+
+sed -i "1iuser nginx;" /etc/nginx/nginx.conf
+service nginx restart
+
