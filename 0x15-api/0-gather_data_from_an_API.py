@@ -5,7 +5,6 @@ if __name__ == '__main__':
     from sys import argv
     import requests
 
-    ''' Getting tasks '''
     response = requests.get('https://jsonplaceholder.typicode.com/todos',
                             params={'userId': argv[1]}).json()
 
@@ -18,7 +17,6 @@ if __name__ == '__main__':
             completed += 1
             taskNames.append(task["title"])
 
-    ''' Getting Employee data '''
     response = requests.get('https://jsonplaceholder.typicode.com/users',
                             params={'id': argv[1]}).json()
 
@@ -28,4 +26,4 @@ if __name__ == '__main__':
                                                           completed, nTasks))
 
     for task in taskNames:
-        print("\t " + task)
+        print("\t {}".format(task))
