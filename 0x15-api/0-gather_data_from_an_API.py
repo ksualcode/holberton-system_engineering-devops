@@ -28,4 +28,4 @@ if __name__ == '__main__':
                                                           completed, nTasks))
 
     for task in taskNames:
-        print("\t" + task)
+        print("\t " + task)
