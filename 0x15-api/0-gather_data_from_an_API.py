@@ -8,23 +8,22 @@ if __name__ == '__main__':
 
     # Getting tasks
     response = requests.get('https://jsonplaceholder.typicode.com/todos',
-                            params={'userId': argv[1]})
+                            params={'userId': argv[1]}).json()
 
     completed = 0
     taskNames = []
-    response = json.loads(response.text)
-    nTasks = len(response)
+    nTasks = 0
     for task in response:
+        nTasks += 1
         if task["completed"]:
             completed += 1
             taskNames.append(task["title"])
 
     # Getting Employee data
     response = requests.get('https://jsonplaceholder.typicode.com/users',
-                            params={'id': argv[1]})
+                            params={'id': argv[1]}).json()
 
-    name = json.loads(response.text)
-    name = name[0]["name"]
+    name = response[0]["name"]
 
     print("Employee {} is done with tasks({}/{}):".format(name,
                                                           completed, nTasks))
