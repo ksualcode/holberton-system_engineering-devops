@@ -4,7 +4,6 @@
 if __name__ == '__main__':
     from sys import argv
     import requests
-    import json
 
     # Getting tasks
     response = requests.get('https://jsonplaceholder.typicode.com/todos',
