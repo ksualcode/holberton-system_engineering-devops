@@ -9,13 +9,13 @@ if __name__ == '__main__':
                             params={'userId': argv[1]}).json()
 
     completed = 0
-    taskNames = []
-    nTasks = 0
+    task_names = []
+    n_tasks = 0
     for task in response:
-        nTasks += 1
+        n_tasks += 1
         if task["completed"]:
             completed += 1
-            taskNames.append(task["title"])
+            task_names.append(task["title"])
 
     response = requests.get('https://jsonplaceholder.typicode.com/users',
                             params={'id': argv[1]}).json()
@@ -23,7 +23,7 @@ if __name__ == '__main__':
     name = response[0]["name"]
 
     print("Employee {} is done with tasks({}/{}):".format(name,
-                                                          completed, nTasks))
+                                                          completed, n_tasks))
 
-    for task in taskNames:
+    for task in task_names:
         print("\t {}".format(task))
