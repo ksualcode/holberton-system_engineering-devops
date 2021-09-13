@@ -6,15 +6,12 @@ if __name__ == '__main__':
     import requests
     import json
 
-    # Getting tasks
     taskResponse = requests.get('https://jsonplaceholder.typicode.com/todos',
-                                params={'userId': argv[1]})
-    taskResponse = json.loads(taskResponse.text)
+                                params={'userId': argv[1]}).json()
 
-    # Getting Employee data
     userResponse = requests.get('https://jsonplaceholder.typicode.com/users',
-                                params={'id': argv[1]})
-    userResponse = json.loads(userResponse.text)
+                                params={'id': argv[1]}).json()
+
     id = userResponse[0]["id"]
     username = userResponse[0]["username"]
 
