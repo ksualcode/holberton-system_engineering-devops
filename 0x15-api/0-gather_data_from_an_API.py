@@ -13,7 +13,7 @@ if __name__ == '__main__':
     completed = 0
     taskNames = []
     response = json.loads(response.text)
-    totalTasks = len(response)
+    nTasks = len(response)
     for task in response:
         if task["completed"]:
             completed += 1
@@ -27,6 +27,7 @@ if __name__ == '__main__':
     name = name[0]["name"]
 
     print("Employee {} is done with tasks({}/{}):".format(name,
-                                                            completed, totalTasks))
+                                                          completed, nTasks))
+
     for task in taskNames:
         print("\t" + task)
