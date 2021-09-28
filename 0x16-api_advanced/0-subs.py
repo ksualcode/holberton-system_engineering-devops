@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+"""
+0-subs
+"""
 
 from requests import get
 
